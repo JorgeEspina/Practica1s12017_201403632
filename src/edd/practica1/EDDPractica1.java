@@ -16,7 +16,7 @@ public class EDDPractica1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print ("Prueba de sincronizacion de cambios");
+        //System.out.print ("Prueba de sincronizacion de cambios");
          Principal Menu= new Principal();
        Menu.setVisible(true);
     }
