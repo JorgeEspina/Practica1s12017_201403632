@@ -23,9 +23,9 @@ public class ListaHorizontal {
        if(Primero == null){
            Primero=Ultimo=Inserta;
        }else{
-           if( Inserta.y < Primero.y){
+           if( Inserta.x < Primero.x){
               InsertarFrente(Inserta); 
-            }else if (Inserta.y > Ultimo.y ){
+            }else if (Inserta.x > Ultimo.x ){
               InsertarFinal(Inserta); 
        }else{
              InsertarMedio(Inserta);
@@ -43,36 +43,35 @@ public class ListaHorizontal {
 
 
  void InsertarFrente(NodoMatrizOrtogonal Inserta){
-     Primero.Arriba = Inserta;
-     Inserta.Abajo = Primero;
-     Primero=Primero.Arriba;
+     Primero.Izquierda = Inserta;
+     Inserta.Derecha = Primero;
+     Primero=Primero.Izquierda;
  }
  void InsertarFinal(NodoMatrizOrtogonal Inserta){
-     Ultimo.Abajo=Inserta;
-     Inserta.Arriba=Ultimo;
-     Ultimo=Ultimo.Abajo;
+     Ultimo.Derecha=Inserta;
+     Inserta.Izquierda=Ultimo;
+     Ultimo=Ultimo.Derecha;
  }
  void InsertarMedio(NodoMatrizOrtogonal Inserta){
      NodoMatrizOrtogonal Temporal1;
      NodoMatrizOrtogonal Temporal2;
      Temporal1=Primero;
-     while(Temporal1.y < Inserta.y){
-         Temporal1=Temporal1.Abajo;
-         
+     while(Temporal1.x < Inserta.x){
+         Temporal1=Temporal1.Derecha;         
      }
-     Temporal2=Temporal1.Arriba;
-     Temporal2.Abajo=Inserta;
-     Temporal1.Arriba=Inserta;
-     Inserta.Abajo=Temporal1;
-     Inserta.Arriba=Temporal2;
+     Temporal2=Temporal1.Izquierda;
+     Temporal2.Derecha=Inserta;
+     Temporal1.Izquierda=Inserta;
+     Inserta.Derecha=Temporal1;
+     Inserta.Izquierda=Temporal2;
      
  }
  void Recorrer(){
      if (Primero != null){
          NodoMatrizOrtogonal Temporal = Primero;
      while(Temporal!=null){
-            System.out.println("\n "+ Temporal.y);
-            Temporal=Temporal.Abajo;
+            System.out.println( "X = "+ Temporal.x);
+            Temporal=Temporal.Derecha;
          //count<<"y="<<Temporal.y<<end1;
      }
  

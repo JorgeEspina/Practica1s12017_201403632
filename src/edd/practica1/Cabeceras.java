@@ -9,16 +9,6 @@ package edd.practica1;
  *
  * @author Jorge Espina
  */
-public class NodoCabecera {
- int x;
- NodoCabecera Siguiente;
- NodoCabecera Anterior;
- ListaVertical Columna;
- NodoCabecera(int x){
-     this.x=x;
-     Columna= new ListaVertical();
-     Siguiente=null;
-     Anterior=null;
-     
- }
+public class Cabeceras {
+    
 }

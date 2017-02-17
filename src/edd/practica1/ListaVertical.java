@@ -72,7 +72,7 @@ public class ListaVertical {
      if (Primero != null){
          NodoMatrizOrtogonal Temporal = Primero;
      while(Temporal!=null){
-            System.out.println("\n "+ Temporal.y);
+            System.out.println("Y = "+ Temporal.y);
             Temporal=Temporal.Abajo;
          //count<<"y="<<Temporal.y<<end1;
      }

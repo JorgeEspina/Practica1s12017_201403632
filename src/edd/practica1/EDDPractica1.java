@@ -20,13 +20,22 @@ public class EDDPractica1 {
         /* Principal Menu= new Principal();
        Menu.setVisible(true);*/
         ListaVertical Lista =new ListaVertical();
-        Lista.Insertar(new NodoMatrizOrtogonal(1,0,0));
         Lista.Insertar(new NodoMatrizOrtogonal(1,0,3));
+        Lista.Insertar(new NodoMatrizOrtogonal(1,0,0));
         Lista.Insertar(new NodoMatrizOrtogonal(1,0,1));
         Lista.Insertar(new NodoMatrizOrtogonal(1,0,5));
         Lista.Insertar(new NodoMatrizOrtogonal(1,0,2));
    
         Lista.Recorrer();
+        System.out.println(" ");
+        ListaHorizontal Lista2 =new ListaHorizontal();
+        Lista2.Insertar(new NodoMatrizOrtogonal(1,5,3));
+        Lista2.Insertar(new NodoMatrizOrtogonal(1,3,0));
+        Lista2.Insertar(new NodoMatrizOrtogonal(1,4,1));
+        Lista2.Insertar(new NodoMatrizOrtogonal(1,1,5));
+        Lista2.Insertar(new NodoMatrizOrtogonal(1,0,2));
+   
+        Lista2.Recorrer();
         }
     
 }
