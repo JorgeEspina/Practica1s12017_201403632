@@ -4,16 +4,26 @@
  * and open the template in the editor.
  */
 package edd.practica1;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import javax.swing.JFileChooser;
+import org.jdom2.Document;         // |
+import org.jdom2.Element;          // |\ Librerías
+import org.jdom2.JDOMException;    // |/ JDOM
+import org.jdom2.input.SAXBuilder; // |
+ import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 /**
  *
  * @author Jorge Espina
  */
-public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
+public class Principal extends javax.swing.JFrame {
+    File archivos;
+    JFileChooser seleccionado = new JFileChooser();
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
@@ -42,7 +52,6 @@ public class Principal extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Jugar.png"))); // NOI18N
         jButton1.setText("Jugar");
-        jButton1.setActionCommand("Jugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -52,6 +61,11 @@ public class Principal extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/LeerArchivo.png"))); // NOI18N
         jButton2.setText("Leer Archivo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -98,9 +112,96 @@ public class Principal extends javax.swing.JFrame {
         Jugadores.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(seleccionado.showDialog(null, "Abrir Archivo") == JFileChooser.APPROVE_OPTION){
+        archivos = seleccionado.getSelectedFile(); 
+        
+          SAXBuilder builder = new SAXBuilder();
+          
+        try
+        {
+        Document document = (Document) builder.build( archivos ); 
+        Element rootNode = document.getRootElement(); 
+       
+        Element Raiz = document.getRootElement();
+        
+         List listpri = Raiz.getChildren("dimension");
+
+            for (int i = 0; i < listpri.size(); i++) {
+            Element camp = (Element) Raiz.getChildren("dimension").get(i);
+            String Dimensiones = camp.getTextTrim();
+            System.out.println( "Dimension :" + Dimensiones);
+          
+            }
+        
+        List list = rootNode.getChildren( "dobles" ); 
+      
+        for ( int i = 0; i < list.size(); i++ )        {
+            Element scrabble = (Element) list.get(i); 
+            List lista_dobles = scrabble.getChildren();
+             System.out.println( "\tdobles" );
+            for ( int j = 0; j < lista_dobles.size(); j++ )
+            {
+                Element dobles = (Element)lista_dobles.get( j );
+                String x = dobles.getChildTextTrim("x");
+                 String y = dobles.getChildTextTrim("y");
+                System.out.println( "\t"+x+"\t\t"+y+"\t");
+            }
+        }
+        
+           List listtri = rootNode.getChildren( "triples" ); 
+      
+        for ( int i = 0; i < listtri.size(); i++ )        {
+            Element scrabble = (Element) listtri.get(i); 
+            List lista_triples = scrabble.getChildren();
+             System.out.println( "\ttriples" );
+            for ( int j = 0; j < lista_triples.size(); j++ )
+            {
+                Element triples = (Element)lista_triples.get( j );
+               String x = triples.getChildTextTrim("x");
+                String y = triples.getChildTextTrim("y");
+                System.out.println( "\t"+x+"\t\t"+y+"\t");
+            }
+        }
+        
+            for ( int i = 0; i < rootNode.getChildren( "diccionario").size(); i++ ) {
+            Element listd = (Element) rootNode.getChildren( "diccionario" ).get(i); 
+            for (int j = 0; j < listd.getChildren().size(); j++) {
+                Element diccionario = (Element)listd.getChildren("palabra").get( j );
+                String palabra = (diccionario.getTextTrim());   
+                System.out.println( "\t"+palabra+"\t");
+                
+                
+            }
+            }
+  
+       
+            
+            /*      List listdic = rootNode.getChildren( "diccionario" );
+          for ( int j = 0; j < listdic.size(); j++ ) {
+            Element scrabble = (Element) listdic.get(j); 
+            List listd = scrabble.getChildren();
+            for (int i = 0; i < listd.size(); i++) {
+                 Element diccionario = (Element)listdic.get( i );
+                String palabra = diccionario.getChildTextTrim("palabra");   
+                System.out.println( "\t"+palabra+"\t");
+                
+                
+            }
+            }
+            */
+           
+            
+    }catch ( IOException | JDOMException io ) {
+        System.out.println( io.getMessage() );
+    }
+               
+        }
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

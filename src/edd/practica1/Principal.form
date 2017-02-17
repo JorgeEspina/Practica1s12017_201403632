@@ -82,7 +82,6 @@
               <Image iconType="3" name="/Recursos/Jugar.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Jugar"/>
-            <Property name="actionCommand" type="java.lang.String" value="Jugar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -98,6 +97,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Leer Archivo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
