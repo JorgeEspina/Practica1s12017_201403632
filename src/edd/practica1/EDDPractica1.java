@@ -61,7 +61,10 @@ public class EDDPractica1 {
        Laterales.Insertar(new NodoLateral(0));
        Laterales.Insertar(new NodoLateral(1));
        Laterales.Recorrer();
+       Laterales.Existe(2);
        
+       NodoLateral no ;
+       no=Laterales.Busqueda(4);
                 }
     
 }

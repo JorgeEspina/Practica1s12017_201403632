@@ -72,9 +72,44 @@ public class ListaLateral {
             System.out.println( "Y = "+ Temporal.y);
             Temporal=Temporal.Siguiente;
          //count<<"y="<<Temporal.y<<end1;
-     }
+     }     
  
      
      }
  }
+   boolean Existe (int y ){
+     if (Primero == null){
+        System.out.println("No Existe Lista Vacia"); 
+         return false;
+     }else{
+         NodoLateral Temporal;
+         Temporal = Primero;
+         while(Temporal!=null){
+             if(Temporal.y ==y){
+                 System.out.println("Existe"); 
+                 return true;
+             }else if (Temporal.Siguiente == null){
+                 System.out.println("No se Encontro"); 
+                 return false;
+             }
+             Temporal= Temporal.Siguiente;
+         }         
+     }
+        return false;
+ }
+  NodoLateral Busqueda(int y){
+      if(Existe(y)){
+          NodoLateral Temporal;
+          Temporal=Primero;
+          while(Temporal.y!=y){
+              Temporal= Temporal.Siguiente;
+          }
+          System.out.println("Retornando"); 
+          return Temporal;
+      }else {
+          System.out.println("No Existe"); 
+          return(new NodoLateral(-1));
+      }
+      
+  }  
 }
