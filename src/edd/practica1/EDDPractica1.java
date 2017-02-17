@@ -40,7 +40,7 @@ public class EDDPractica1 {
         Lista2.Recorrer();
     */
        // Cabeceras cabeceras ;
-        Cabeceras cabeceras =new Cabeceras();
+  /*      Cabeceras cabeceras =new Cabeceras();
        cabeceras.Insertar(new NodoCabecera(3));
        cabeceras.Insertar(new NodoCabecera(0));
        cabeceras.Insertar(new NodoCabecera(1));
@@ -52,8 +52,8 @@ public class EDDPractica1 {
        NodoCabecera n;
        n=cabeceras.Busqueda(5);
        
-        System.out.println(" "); 
-        ListaLateral Laterales =new ListaLateral();
+       System.out.println(" "); 
+       ListaLateral Laterales =new ListaLateral();
        Laterales.Insertar(new NodoLateral(6));
        Laterales.Insertar(new NodoLateral(7));
        Laterales.Insertar(new NodoLateral(2));
@@ -65,6 +65,13 @@ public class EDDPractica1 {
        
        NodoLateral no ;
        no=Laterales.Busqueda(4);
+          */
+        MatrizOrtogonal Matriz = new MatrizOrtogonal();
+        Matriz.Llenar(3, 3);
+        
+        int Dato;
+        Dato = Matriz.ListaLaterales.Busqueda(0).Filas.Primero.Abajo.Derecha.Dato;
+        System.out.println(" "+ Dato + " ");
                 }
     
 }
