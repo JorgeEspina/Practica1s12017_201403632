@@ -11,7 +11,7 @@ public class ColaFichasTotal {
         Inicio=Fin=null;
         Dato=0;        
     }
-    void InsertarCola(int x){
+    void InsertarCola(String x){
         if(Inicio==null){
             Inicio=Fin=new NodoCola(x , null);            
         }else{
@@ -21,7 +21,7 @@ public class ColaFichasTotal {
             Fin=Nuevo;
         }
     }
-    String Imprimir(){
+     String Imprimir(){
         String Salida="";
         Aux=Inicio;
         while(Aux!=null){

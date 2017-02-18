@@ -24,6 +24,12 @@ import java.util.List;
 public class Principal extends javax.swing.JFrame {
     File archivos;
     JFileChooser seleccionado = new JFileChooser();
+    int A=0,E=0,O=0,I=0,S=0,N=0,L=0,R=0,U=0,T=0,D=0,G=0,C=0,B=0,M=0,P=0,H=0,F=0,V=0,Y=0,Q=0,J=0,Ñ=0,X=0,Z = 0;
+    int NumeroTotalLetras = 0;
+    int num1 = 97;
+    int num2 = 122;
+    ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+    ColaFichasTotal ColaFichasTotal = new ColaFichasTotal();
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
@@ -175,25 +181,9 @@ public class Principal extends javax.swing.JFrame {
                 //ListaSimpleFichasJugador.VerLista();
             }
             }
+  GenerarFichasTotales();
   
-       
-            
-            /*      List listdic = rootNode.getChildren( "diccionario" );
-          for ( int j = 0; j < listdic.size(); j++ ) {
-            Element scrabble = (Element) listdic.get(j); 
-            List listd = scrabble.getChildren();
-            for (int i = 0; i < listd.size(); i++) {
-                 Element diccionario = (Element)listdic.get( i );
-                String palabra = diccionario.getChildTextTrim("palabra");   
-                System.out.println( "\t"+palabra+"\t");
-                
-                
-            }
-            }
-            */
-           
-            
-    }catch ( IOException | JDOMException io ) {
+   }catch ( IOException | JDOMException io ) {
         System.out.println( io.getMessage() );
     }
                
@@ -201,7 +191,143 @@ public class Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
+public void GenerarFichasTotales(){
+                while(NumeroTotalLetras < 96){
+		int numAleatorio = (int)Math.floor(Math.random()*(num2 -num1)+num1);
+                //System.out.println("la letra generada es: " + (char)numAleatorio);
+                if ((A<12) && ((char)numAleatorio==97)){
+                    A+=1;
+                    ColaFichasTotal.InsertarCola("A");
+                    NumeroTotalLetras++;
+                }else if ((E<12) && ((char)numAleatorio==101)){
+                    E+=1;
+                    ColaFichasTotal.InsertarCola("E");
+                    NumeroTotalLetras++;
+                }else if ((O<9) && ((char)numAleatorio==111)){
+                    O+=1;
+                    ColaFichasTotal.InsertarCola("O");
+                    NumeroTotalLetras++;
+                }else if ((I<6) && ((char)numAleatorio==105)){
+                    I+=1;
+                    ColaFichasTotal.InsertarCola("I");
+                    NumeroTotalLetras++;
+                }else if ((S < 6) && ((char)numAleatorio==115)){
+                    S+=1;
+                    ColaFichasTotal.InsertarCola("S");
+                    NumeroTotalLetras++;
+                }else if ((N<5) && ((char)numAleatorio==110)){
+                    N+=1;
+                    ColaFichasTotal.InsertarCola("N");
+                    NumeroTotalLetras++;
+                }else if ((L<4) && ((char)numAleatorio==108)){
+                    L+=1;
+                    ColaFichasTotal.InsertarCola("L");
+                    NumeroTotalLetras++;
+                }else if ((R<5) && ((char)numAleatorio==114)){
+                    R+=1;
+                    ColaFichasTotal.InsertarCola("R");
+                    NumeroTotalLetras++;
+                }else if ((U<5) && ((char)numAleatorio==117)){
+                    U+=1;
+                    ColaFichasTotal.InsertarCola("U");
+                    NumeroTotalLetras++;
+                }else if ((T<4) && ((char)numAleatorio==116)){
+                    T+=1;
+                    ColaFichasTotal.InsertarCola("T");
+                    NumeroTotalLetras++;
+                }else if ((D<5) && ((char)numAleatorio==100)){
+                    D+=1;
+                    ColaFichasTotal.InsertarCola("D");
+                    NumeroTotalLetras++;
+                }else if ((G<2) && ((char)numAleatorio==103)){
+                    G+=1;
+                    ColaFichasTotal.InsertarCola("G");
+                    NumeroTotalLetras++;
+                }else if ((C<4) && ((char)numAleatorio==99)){
+                    C+=1;
+                    ColaFichasTotal.InsertarCola("C");
+                    NumeroTotalLetras++;
+                }else if ((B<2) && ((char)numAleatorio==98)){
+                    B+=1;
+                    ColaFichasTotal.InsertarCola("B");
+                    NumeroTotalLetras++;
+                }else if ((M<2) && ((char)numAleatorio==109)){
+                    M+=1;
+                    ColaFichasTotal.InsertarCola("M");
+                    NumeroTotalLetras++;
+                }else if ((P<2) && ((char)numAleatorio==112)){
+                    P+=1;
+                    ColaFichasTotal.InsertarCola("P");
+                    NumeroTotalLetras++;
+                }else if ((H<2) && ((char)numAleatorio==104)){
+                    H+=1;
+                    NumeroTotalLetras++;
+                    ColaFichasTotal.InsertarCola("H");
+                }else if ((F<1) && (NumeroTotalLetras==87)){
+                    F+=1;
+                    ColaFichasTotal.InsertarCola("F");
+                    NumeroTotalLetras++;
+                }else if ((V<1) && (NumeroTotalLetras==88)){
+                    V+=1;
+                    ColaFichasTotal.InsertarCola("V");
+                    NumeroTotalLetras++;
+                }else if ((Y<1) && (NumeroTotalLetras==89)){
+                    Y+=1;
+                    ColaFichasTotal.InsertarCola("Y");
+                    NumeroTotalLetras++;
+                }else if ((Q<1) && (NumeroTotalLetras==90)){
+                    Q+=1;
+                    ColaFichasTotal.InsertarCola("Q");
+                    NumeroTotalLetras++;
+                }else if ((J<1) && (NumeroTotalLetras==91)){
+                    J+=1;
+                    ColaFichasTotal.InsertarCola("J");
+                    NumeroTotalLetras++;
+                }else if ((Ñ<1) && (NumeroTotalLetras==94)){
+                    Ñ+=1;
+                    ColaFichasTotal.InsertarCola("Ñ");
+                    NumeroTotalLetras++;
+                }else if ((X<1) && (NumeroTotalLetras==93)){
+                    X+=1;
+                    ColaFichasTotal.InsertarCola("X");
+                    NumeroTotalLetras++;
+                }else if ((Z<1) && (NumeroTotalLetras==92)){
+                    Z+=1;
+                    ColaFichasTotal.InsertarCola("Z");
+                    NumeroTotalLetras++;
+                }else if (NumeroTotalLetras == 95){
+                 System.out.println("la letra generadas A : " + A);
+                 System.out.println("la letra generadas E : " + E);
+                 System.out.println("la letra generadas O : " + O);
+                 System.out.println("la letra generadas I : " + I);
+                 System.out.println("la letra generadas S : " + S);
+                 System.out.println("la letra generadas N : " + N);
+                 System.out.println("la letra generadas L : " + L);
+                 System.out.println("la letra generadas R : " + R);
+                 System.out.println("la letra generadas U : " + U);
+                 System.out.println("la letra generadas T : " + T);
+                 System.out.println("la letra generadas D : " + D);
+                 System.out.println("la letra generadas G : " + G);
+                 System.out.println("la letra generadas C : " + C);
+                 System.out.println("la letra generadas B : " + B);
+                 System.out.println("la letra generadas M : " + M);
+                 System.out.println("la letra generadas P : " + P);
+                 System.out.println("la letra generadas H : " + H);
+                 System.out.println("la letra generadas F : " + F);
+                 System.out.println("la letra generadas V : " + V);
+                 System.out.println("la letra generadas Y : " + Y);
+                 System.out.println("la letra generadas Q : " + Q);
+                 System.out.println("la letra generadas J : " + J);
+                 System.out.println("la letra generadas Ñ : " + Ñ);
+                 System.out.println("la letra generadas X : " + X);
+                 System.out.println("la letra generadas Z : " + Z);
+                
+                 
+                 System.out.println(ColaFichasTotal.Imprimir());
+                 break;
+                }
+                }        
+}
  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

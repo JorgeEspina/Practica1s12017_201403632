@@ -8,8 +8,8 @@ package edd.practica1;
 public class NodoCola {
     NodoCola Siguiente;
     NodoCola Anterior;
-    int Dato;
-    NodoCola(int x , NodoCola Enlace){
+    String Dato;
+    NodoCola(String x , NodoCola Enlace){
         Siguiente=Anterior=Enlace;
         Dato=x;
     }
