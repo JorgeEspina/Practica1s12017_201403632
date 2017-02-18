@@ -170,8 +170,9 @@ public class Principal extends javax.swing.JFrame {
                 Element diccionario = (Element)listd.getChildren("palabra").get( j );
                 String palabra = (diccionario.getTextTrim());   
                 System.out.println( "\t"+palabra+"\t");
-                
-                
+                ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+                ListaSimpleFichasJugador.IngresarNodo(palabra);
+                //ListaSimpleFichasJugador.VerLista();
             }
             }
   

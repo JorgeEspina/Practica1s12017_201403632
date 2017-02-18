@@ -17,8 +17,8 @@ public class EDDPractica1 {
     public static void main(String[] args) {
         // TODO code application logic here
         //System.out.print ("Prueba de sincronizacion de cambios");
-        /* Principal Menu= new Principal();
-       Menu.setVisible(true);*/
+         Principal Menu= new Principal();
+       Menu.setVisible(true);
       
         
         /*ListaVertical Lista =new ListaVertical();
@@ -66,12 +66,13 @@ public class EDDPractica1 {
        NodoLateral no ;
        no=Laterales.Busqueda(4);
           */
-        MatrizOrtogonal Matriz = new MatrizOrtogonal();
+       /* MatrizOrtogonal Matriz = new MatrizOrtogonal();
         Matriz.Llenar(3, 3);
         
         int Dato;
         Dato = Matriz.ListaLaterales.Busqueda(0).Filas.Primero.Abajo.Derecha.Dato;
         System.out.println(" "+ Dato + " ");
+               */
                 }
     
 }
