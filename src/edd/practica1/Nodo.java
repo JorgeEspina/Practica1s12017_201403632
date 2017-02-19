@@ -5,8 +5,10 @@ package edd.practica1;
  *
  * @author Espina Molina
  */
-public class Nodo {
+public class Nodo  {
  String Dato;
  Nodo Siguiente;
  Nodo Anterior; 
+ /*Nodo (String x,ListaSimpleFichasJugador ListaSimpleFichasJugador){
+ }*/
 }

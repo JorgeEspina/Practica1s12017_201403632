@@ -29,8 +29,8 @@ public class Principal extends javax.swing.JFrame {
     int num1 = 97;
     int num2 = 122;
     //ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
-    ListasSimplesDiccionario ListasSimplesDiccionario = new ListasSimplesDiccionario();
-    ColaFichasTotal ColaFichasTotal = new ColaFichasTotal();
+   public static ListasSimplesDiccionario ListasSimplesDiccionario = new ListasSimplesDiccionario();
+   public static ColaFichasTotal ColaFichasTotal = new ColaFichasTotal();
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
@@ -321,10 +321,11 @@ public void GenerarFichasTotales(){
                  System.out.println("la letra generadas Ñ : " + Ñ);
                  System.out.println("la letra generadas X : " + X);
                  System.out.println("la letra generadas Z : " + Z);            
-                // System.out.println(ColaFichasTotal.Imprimir());
+                 //System.out.println(ColaFichasTotal.Imprimir());
                  break;
                 }
-                }        
+                }
+               
 }
  
     public static void main(String args[]) {

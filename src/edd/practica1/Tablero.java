@@ -13,6 +13,7 @@ package edd.practica1;
 import edd.practica1.Principal;
 public class Tablero extends javax.swing.JFrame {
  ListasSimplesDiccionario ListasDiccionario;
+ ColaFichasTotal ColaFichasTotal;
         /**
      * Creates new form Tablero
      */
@@ -20,7 +21,7 @@ public class Tablero extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(255,255,255));
-        //ListasDiccionario = Principal.
+       // ListasDiccionario =Principal.ListasDiccionario;
     }
 
     /**
@@ -292,13 +293,13 @@ public class Tablero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       // ListasDiccionario = Principal.ListasSimplesDiccionario;     
+        ListasDiccionario = Principal.ListasSimplesDiccionario;     
       //  NodoListaSimpleDiccionario ListasSimplesDiccionario = Principal.ListasSimplesDiccionario;
-  // ListasSimplesDiccionario.IngresarNodo(jTextField2.getText());
-    //ListasSimplesDiccionario.VerLista();
+   ListasDiccionario.IngresarNodo(jTextField2.getText());
+    ListasDiccionario.VerLista();
     jTextField2.setText(null);
-        
-          
+        jButton5.setText("Aa");
+        jCheckBox1.setText("AA");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

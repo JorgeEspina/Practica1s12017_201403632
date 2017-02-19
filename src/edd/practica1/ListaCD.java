@@ -7,6 +7,7 @@ package edd.practica1;
 public class ListaCD {
  Nodo Primero;
  Nodo Ultimo;
+ ;
  public ListaCD(){
      Primero=null;
      Ultimo=null;
@@ -16,7 +17,7 @@ public class ListaCD {
      //Ultimo=null;
      //x=36
      // 36-->Primero
- public void IngresarNodo(String x){
+ public void IngresarNodo(String x,ListaSimpleFichasJugador ListaSimpleFichasJugador){
      Nodo Nuevo = new Nodo();
      Nuevo.Dato=x;
      if (Primero ==null){

@@ -11,7 +11,7 @@ package edd.practica1;
  */
 public class IngresoJugadores extends javax.swing.JFrame {
          ListaCD ListCD=new ListaCD();
-
+ColaFichasTotal ColaFichasTotal;
     /**
      * Creates new form IngresoJugadores
      */
@@ -104,14 +104,23 @@ public class IngresoJugadores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         ListCD.IngresarNodo(jTextField1.getText());
+        
+        ColaFichasTotal = Principal.ColaFichasTotal; 
+        ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+        for (int NoFichas = 0 ;NoFichas<7;NoFichas++ ){
+           ListaSimpleFichasJugador.IngresarNodo(ColaFichasTotal.Sacar());
+           
+        }        
+        //ColaFichasTotal.Imprimir();
+        ListaSimpleFichasJugador.VerLista();
+         ListCD.IngresarNodo(jTextField1.getText(),ListaSimpleFichasJugador);
          jTextField1.setText(" ");
                  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+      
         ListCD.Desplegara();
         System.out.print ("Prueba de sincronizacion de cambios");
       //  ListCD.Desplegar();

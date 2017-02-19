@@ -21,6 +21,7 @@ public class ColaFichasTotal {
             Fin=Nuevo;
         }
     }
+    
      String Imprimir(){
         String Salida="";
         Aux=Inicio;
@@ -30,5 +31,12 @@ public class ColaFichasTotal {
             Aux=Aux.Siguiente;
         }
         return Salida;
+    }
+     String  Sacar(){
+        String Salida="";
+        Inicio=Inicio.Siguiente;
+        System.out.println(Inicio.Dato);
+        return Salida;
+      
     }
 }
