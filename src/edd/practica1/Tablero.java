@@ -10,15 +10,17 @@ package edd.practica1;
  *
  * @author Jorge Espina
  */
+import edd.practica1.Principal;
 public class Tablero extends javax.swing.JFrame {
-
-    /**
+ ListasSimplesDiccionario ListasDiccionario;
+        /**
      * Creates new form Tablero
      */
     public Tablero() {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(255,255,255));
+        //ListasDiccionario = Principal.
     }
 
     /**
@@ -102,6 +104,11 @@ public class Tablero extends javax.swing.JFrame {
 
         jButton1.setText("Agregar");
         jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Cambiar Letras:");
@@ -281,11 +288,18 @@ public class Tablero extends javax.swing.JFrame {
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleDescription("");
-        jCheckBox2.getAccessibleContext().setAccessibleName("E");
-        jCheckBox3.getAccessibleContext().setAccessibleName("M");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       // ListasDiccionario = Principal.ListasSimplesDiccionario;     
+      //  NodoListaSimpleDiccionario ListasSimplesDiccionario = Principal.ListasSimplesDiccionario;
+  // ListasSimplesDiccionario.IngresarNodo(jTextField2.getText());
+    //ListasSimplesDiccionario.VerLista();
+    jTextField2.setText(null);
+        
+          
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

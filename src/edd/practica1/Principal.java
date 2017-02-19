@@ -28,7 +28,8 @@ public class Principal extends javax.swing.JFrame {
     int NumeroTotalLetras = 0;
     int num1 = 97;
     int num2 = 122;
-    ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+    //ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+    ListasSimplesDiccionario ListasSimplesDiccionario = new ListasSimplesDiccionario();
     ColaFichasTotal ColaFichasTotal = new ColaFichasTotal();
     public Principal() {
         initComponents();
@@ -176,8 +177,7 @@ public class Principal extends javax.swing.JFrame {
                 Element diccionario = (Element)listd.getChildren("palabra").get( j );
                 String palabra = (diccionario.getTextTrim());   
                 System.out.println( "\t"+palabra+"\t");
-                ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
-                ListaSimpleFichasJugador.IngresarNodo(palabra);
+                ListasSimplesDiccionario.IngresarNodo(palabra);
                 //ListaSimpleFichasJugador.VerLista();
             }
             }
@@ -320,10 +320,8 @@ public void GenerarFichasTotales(){
                  System.out.println("la letra generadas J : " + J);
                  System.out.println("la letra generadas Ñ : " + Ñ);
                  System.out.println("la letra generadas X : " + X);
-                 System.out.println("la letra generadas Z : " + Z);
-                
-                 
-                 System.out.println(ColaFichasTotal.Imprimir());
+                 System.out.println("la letra generadas Z : " + Z);            
+                // System.out.println(ColaFichasTotal.Imprimir());
                  break;
                 }
                 }        
