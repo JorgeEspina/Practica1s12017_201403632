@@ -1,0 +1,5 @@
+digraph ColaFichasTotalReporte{ 	rankkdir=LR 
+ 
+
+N->U->O->P->H->B->H->N->P->A->U->A->N->B->M->A->D->C->O->L->L->R->O->A->O->O->I->U->S->G->L->A->S->A->R->A->O->G->O->C->T->R->D->S->S->N->E->A->E->O->E->E->D->C->D->T->R->A->T->U->I->N->A->E->E->A->C->A->I->S->I->I->S->I->E->E->E->E->E->E->F->V->Y->Q->J->Z->X
+ }

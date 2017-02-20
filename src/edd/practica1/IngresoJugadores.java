@@ -5,13 +5,17 @@
  */
 package edd.practica1;
 
+import javax.swing.JOptionPane;
 /**
  *
  * @author Jorge Espina
  */
 public class IngresoJugadores extends javax.swing.JFrame {
-         ListaCD ListCD=new ListaCD();
-ColaFichasTotal ColaFichasTotal;
+        public static ListaCD ListCD = new ListaCD();
+        int IngresoJugadores =0;
+        public static ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();;
+        public static String LetraSacada; 
+        ColaFichasTotal ColaFichasTotal;
     /**
      * Creates new form IngresoJugadores
      */
@@ -20,7 +24,14 @@ ColaFichasTotal ColaFichasTotal;
         setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(255,255,255));
     }
+    public String getLetraSacada() {
+        return LetraSacada;
+    }
 
+    
+    public void setLetraSacada(String LetraSacada) {
+        this.LetraSacada = LetraSacada;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,25 +115,32 @@ ColaFichasTotal ColaFichasTotal;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        Tablero Tablero = new Tablero();
+        Tablero.Actualiza();        
         ColaFichasTotal = Principal.ColaFichasTotal; 
-        ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
-        for (int NoFichas = 0 ;NoFichas<7;NoFichas++ ){
-           ListaSimpleFichasJugador.IngresarNodo(ColaFichasTotal.Sacar());
-           
-        }        
-        //ColaFichasTotal.Imprimir();
-        ListaSimpleFichasJugador.VerLista();
-         ListCD.IngresarNodo(jTextField1.getText(),ListaSimpleFichasJugador);
-         jTextField1.setText(" ");
-                 
+                     
+        String UsuarioJugador = jTextField1.getText();
+        if (ListCD.BuscarNodo(UsuarioJugador)==true){
+            JOptionPane.showMessageDialog(null,"El Jugador ya existe, Ingrese Nuevamente ");
+            jTextField1.setText(null);
+        }else{
+             ListaSimpleFichasJugador.VaciarLista();
+             for (int NoFichas = 0 ;NoFichas<8;NoFichas++ ){
+             ColaFichasTotal.Sacar();
+             ListaSimpleFichasJugador.IngresarNodo(LetraSacada);           
+           }   
+            ListCD.IngresarNodo(UsuarioJugador);
+            jTextField1.setText(null);                   
+           }  
+        ListaSimpleFichasJugador.VerLista();;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-      
-        ListCD.Desplegara();
-        System.out.print ("Prueba de sincronizacion de cambios");
+       //System.out.print ("Prueba de sincronizacion de cambios");
+        ListCD.Desplegar();
+       
+        
       //  ListCD.Desplegar();
     }//GEN-LAST:event_jButton2ActionPerformed
 

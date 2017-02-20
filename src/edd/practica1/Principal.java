@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package edd.practica1;
+import java.awt.Button;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -28,6 +29,8 @@ public class Principal extends javax.swing.JFrame {
     int NumeroTotalLetras = 0;
     int num1 = 97;
     int num2 = 122;
+   
+    int Dimension;
     //ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
    public static ListasSimplesDiccionario ListasSimplesDiccionario = new ListasSimplesDiccionario();
    public static ColaFichasTotal ColaFichasTotal = new ColaFichasTotal();
@@ -113,10 +116,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        Tablero Tablero = new Tablero();
-        Tablero.setVisible(true);
+        //Tablero Tablero = new Tablero();
+        //Tablero.setVisible(true);
         IngresoJugadores Jugadores= new IngresoJugadores();
         Jugadores.setVisible(true);
+        MatrizOrtogonal MatrizOrtogonal = new MatrizOrtogonal();
+        MatrizOrtogonal.Llenar(Dimension, Dimension);
+        //MatrizOrtogonal.Graficar();
+        MatrizOrtogonal.RecorrerMatrizGenerar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -137,6 +144,7 @@ public class Principal extends javax.swing.JFrame {
             for (int i = 0; i < listpri.size(); i++) {
             Element camp = (Element) Raiz.getChildren("dimension").get(i);
             String Dimensiones = camp.getTextTrim();
+            Dimension= Integer.parseInt(Dimensiones);
             System.out.println( "Dimension :" + Dimensiones);
           
             }

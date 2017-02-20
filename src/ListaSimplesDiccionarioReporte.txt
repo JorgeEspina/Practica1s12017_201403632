@@ -1,0 +1,5 @@
+digraph ListaSimplesDiccionarioReporte{ 	rankkdir=LR 
+ 
+
+mundo->uno->dos->universidad->practica->ingeniero->juego->mesa->correo->informacion->comerciante
+ }

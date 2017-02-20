@@ -10,13 +10,14 @@ package edd.practica1;
  * @author Jorge Espina
  */
 public class NodoMatrizOrtogonal {
-    int Dato,x,y; 
+    int x,y;
+    Object Dato; 
     NodoMatrizOrtogonal Arriba; 
     NodoMatrizOrtogonal Abajo;
     NodoMatrizOrtogonal Derecha; 
     NodoMatrizOrtogonal Izquierda;
  
-  NodoMatrizOrtogonal (int Dato , int x , int y){
+  NodoMatrizOrtogonal (Object Dato , int x , int y){
      this.Dato = Dato;
      this.x = x;
      this.y=y;
