@@ -13,7 +13,7 @@ public class ListaCD {
  Nodo Primero;
  Nodo Ultimo;
  int Posicion,DimensionLista =0;
- 
+ String Dat;
  ;
  public ListaCD(){
      Primero=null;
@@ -24,9 +24,11 @@ public class ListaCD {
      //Ultimo=null;
      //x=36
      // 36-->Primero
- public void IngresarNodo(Object NombreJugador){
-     Nodo Nuevo = new Nodo(NombreJugador);
-     Nuevo.Dato=NombreJugador;
+ 
+ public void IngresarNodo(String NombreJugador,ListaSimpleFichasJugador FichasJugadores){
+    Nodo Nuevo = new Nodo();
+    Nuevo.setDato(NombreJugador);
+    Nuevo.setFichasJugadores(FichasJugadores);
      if (Primero ==null){
          Primero= Nuevo;
          Primero.Siguiente=Primero;
@@ -38,18 +40,64 @@ public class ListaCD {
          Nuevo.Anterior=Ultimo;
          Ultimo=Nuevo;
          Primero.Anterior=Ultimo;         
-     }
+     }    
+     
      DimensionLista+=1;
  }
+  public ListaSimpleFichasJugador getValorXPos(int Posicion){
+       
+       if(Posicion>=0 && Posicion<DimensionLista){
+           if(Posicion==0){
+               return Primero.getFichasJugadores();
+           }else{
+               Nodo aux = Primero;
+               for(int i =0; i<Posicion;i++){
+                   aux = aux.getSiguiente();
+               }
+               return aux.getFichasJugadores();
+           }
+       }else{
+       //throw new Exception("Posicion inexistente en la lista");
+       
+   }
+       return null;
+   }
+  public String getDat() {
+        return Dat;
+    }   
+  
+ public void setDat(String Dat) {
+        this.Dat = Dat;
+    }
  //Desplegar la lista
  //Primero hacia Ultimo
  public void Desplegar(){
      Nodo Actual = Primero;
+     int a =0;
      do{
          System.out.println(Actual.Dato);
+         if (a ==0){
+              Dat=Actual.Dato;
+         }
+         a++;        
          Actual=Actual.Siguiente;
      }while(Actual!=Primero);
  }
+  public ListaSimpleFichasJugador getLista(String ValorReferido){
+       ListaSimpleFichasJugador FichasJugador = new ListaSimpleFichasJugador();
+       if(BuscarNodo(ValorReferido)){
+           Nodo  aux = Primero;         
+           while(!ValorReferido.contains(aux.getDato())){
+                aux = aux.getSiguiente();
+                
+           }
+           FichasJugador= aux.getFichasJugadores();
+       }else{
+           System.out.println("El dato no Exite en la lista circular");
+           FichasJugador = null;
+       }
+       return FichasJugador;
+   }
  String ReporteGraficaJugadores() throws IOException{
     FileWriter Escribir= null ;
     PrintWriter ImprimirEscribir = null;
@@ -82,7 +130,7 @@ public class ListaCD {
       ImprimirEscribir.close();
       Escribir.close();
        
-        return "ListaSimplesDiccionarioReporte";
+        return "ListaCircularJugadores";
     
 }
  //Ultimo Hacia Primero

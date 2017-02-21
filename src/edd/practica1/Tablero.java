@@ -12,6 +12,8 @@ package edd.practica1;
  */
 import edd.practica1.Principal;
 import edd.practica1.IngresoJugadores;
+import static edd.practica1.IngresoJugadores.ListCD;
+import static edd.practica1.IngresoJugadores.ListaFichasJugador;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,6 +90,7 @@ public class Tablero extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -190,20 +193,6 @@ public class Tablero extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Cambiar Letras:");
 
-        jCheckBox1.setText("A");
-
-        jCheckBox2.setText("E");
-
-        jCheckBox3.setText("M");
-
-        jCheckBox4.setText("D");
-
-        jCheckBox5.setText("P");
-
-        jCheckBox6.setText("G");
-
-        jCheckBox7.setText("O");
-
         jButton2.setText("Cambiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,19 +207,12 @@ public class Tablero extends javax.swing.JFrame {
 
         jButton4.setText("Cancelar Tiro");
 
-        jButton5.setText("A");
-
-        jButton6.setText("E");
-
-        jButton7.setText("M");
-
-        jButton8.setText("D");
-
-        jButton9.setText("P");
-
-        jButton10.setText("G");
-
-        jButton11.setText("O");
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Brush.png"))); // NOI18N
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,32 +221,36 @@ public class Tablero extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(70, 70, 70)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jCheckBox3))
@@ -301,11 +287,36 @@ public class Tablero extends javax.swing.JFrame {
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(153, 153, 153))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(625, 625, 625)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -332,10 +343,10 @@ public class Tablero extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(2, 2, 2)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jCheckBox1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox3))
+                                    .addComponent(jCheckBox3)
+                                    .addComponent(jCheckBox1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jCheckBox4)
@@ -346,24 +357,7 @@ public class Tablero extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(52, 52, 52))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(625, 625, 625)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleDescription("");
@@ -376,22 +370,79 @@ public class Tablero extends javax.swing.JFrame {
    ListasDiccionario.IngresarNodo(jTextField2.getText());
     ListasDiccionario.VerLista();
     jTextField2.setText(null);
-        jButton5.setText("Aa");
-        jCheckBox1.setText("AA");
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ListasDiccionario = Principal.ListasSimplesDiccionario;
+
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+public void  Actualiza(){
+       
+        jLabel7.setIcon(null);
+        jLabel8.setIcon(null);
+        jLabel9.setIcon(null);
+        jLabel10.setIcon(null);
+        jLabel11.setIcon(null);    
+        //jLabel12.setIcon(null);
+        ImageIcon ListaDiccionario  = new ImageIcon(getClass().getResource("/ListaSimplesDiccionarioReporte.png"));
+        ImageIcon ListaDiccionari = new ImageIcon(ListaDiccionario.getImage().getScaledInstance(300,600,java.awt.Image.SCALE_DEFAULT));        
+        jLabel7.setIcon(ListaDiccionario);
+        ImageIcon ListaFichasActivas  = new ImageIcon(getClass().getResource("/ListaSimpleFichasJugador.png"));
+        ImageIcon ListaFichasActiva = new ImageIcon(ListaFichasActivas.getImage().getScaledInstance(100,100,java.awt.Image.SCALE_DEFAULT));        
+        jLabel8.setIcon(ListaFichasActivas);
+        ImageIcon ListaJugadores  = new ImageIcon(getClass().getResource("/ListaCircularJugadores.png"));
+        ImageIcon ListaJugador = new ImageIcon(ListaJugadores.getImage().getScaledInstance(30,30,java.awt.Image.SCALE_DEFAULT));  
+        //jLabel12.setIcon(ListaJugador);
+        jLabel9.setIcon(ListaJugadores);
+        ImageIcon ColaFichas  = new ImageIcon(getClass().getResource("/ColaFichasTotalReporte.png"));
+        ImageIcon ColaFicha = new ImageIcon(ColaFichas.getImage().getScaledInstance(350,450,java.awt.Image.SCALE_DEFAULT));        
+        jLabel10.setIcon(ColaFichas);
+}
+    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
+       
+        Actualiza();
+        //ImageIcon MatrizOrtogonal  = new ImageIcon(getClass().getResource("/Recursos/Pausa.png"));
+        //ImageIcon MatrizOrtogona = new ImageIcon(MatrizOrtogonal.getImage().getScaledInstance(20,20,java.awt.Image.SCALE_DEFAULT));        
+        //jLabel11.setIcon(MatrizOrtogonal);
+    }//GEN-LAST:event_jTabbedPane2MouseClicked
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        ListaCD = IngresoJugadores.ListCD;
+      ListaCD.Desplegar();
+      String a ;
+      a = ListaCD.getDat();
+      jTextField1.setText(a);
+      ListaFichasJugador = ListCD.getLista(jTextField1.getText());
+      System.out.println("Fichas de " + jTextField1.getText());
+      ListaFichasJugador.VerLista();
+       jButton5.setText(ListaFichasJugador.getLetra());
+       jButton6.setText(ListaFichasJugador.getLetra1());
+       jButton7.setText(ListaFichasJugador.getLetra2());
+       jButton8.setText(ListaFichasJugador.getLetra3());
+       jButton9.setText(ListaFichasJugador.getLetra4());
+       jButton10.setText(ListaFichasJugador.getLetra5());
+       jButton11.setText(ListaFichasJugador.getLetra6());
+       
+       jCheckBox1.setText(ListaFichasJugador.getLetra());
+       jCheckBox2.setText(ListaFichasJugador.getLetra1());
+       jCheckBox3.setText(ListaFichasJugador.getLetra2());
+       jCheckBox4.setText(ListaFichasJugador.getLetra3());
+       jCheckBox5.setText(ListaFichasJugador.getLetra4());
+       jCheckBox6.setText(ListaFichasJugador.getLetra5());
+       jCheckBox7.setText(ListaFichasJugador.getLetra6());
+       
+       ListasDiccionario = Principal.ListasSimplesDiccionario;
         ListaCD = IngresoJugadores.ListCD;
         ColaFichasTotal =Principal.ColaFichasTotal;   
-        ListaSimpleFichasJugador = IngresoJugadores.ListaSimpleFichasJugador;    
+        //ListaSimpleFichasJugador = IngresoJugadores.ListaSimpleFichasJugador;    
      try {
-         ListaCD.Desplegar();
-         ListaSimpleFichasJugador.VerLista();
+         //ListaCD.Desplegar();
+        // ListaSimpleFichasJugador.VerLista();
          ListasDiccionario.ReporteGraficaDiccionario();
          ListaCD.ReporteGraficaJugadores();
          ColaFichasTotal.ColaFichasTotalReporte();
-         ListaSimpleFichasJugador.ListaSimpleFichasJugadorReporte();
+         ListaFichasJugador.ListaSimpleFichasJugadorReporte();
      } catch (IOException ex) {
          Logger.getLogger(Tablero.class.getName()).log(Level.SEVERE, null, ex);
      }
@@ -512,32 +563,7 @@ try{
                         ex.printStackTrace();
                         }  finally {
                         }
-	
-
-
-
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-public void  Actualiza(){
-    ImageIcon ListaDiccionario  = new ImageIcon(getClass().getResource("/ListaSimplesDiccionarioReporte.png"));
-        ImageIcon ListaDiccionari = new ImageIcon(ListaDiccionario.getImage().getScaledInstance(300,600,java.awt.Image.SCALE_DEFAULT));        
-        jLabel7.setIcon(ListaDiccionario);
-        ImageIcon ListaFichasActivas  = new ImageIcon(getClass().getResource("/ListaSimpleFichasJugador.png"));
-        ImageIcon ListaFichasActiva = new ImageIcon(ListaFichasActivas.getImage().getScaledInstance(20,20,java.awt.Image.SCALE_DEFAULT));        
-        jLabel8.setIcon(ListaFichasActivas);
-        ImageIcon ListaJugadores  = new ImageIcon(getClass().getResource("/ListaCircularJugadores.png"));
-        ImageIcon ListaJugador = new ImageIcon(ListaJugadores.getImage().getScaledInstance(300,600,java.awt.Image.SCALE_DEFAULT));        
-        jLabel9.setIcon(ListaJugadores);
-        ImageIcon ColaFichas  = new ImageIcon(getClass().getResource("/ColaFichasTotalReporte.png"));
-        ImageIcon ColaFicha = new ImageIcon(ColaFichas.getImage().getScaledInstance(350,450,java.awt.Image.SCALE_DEFAULT));        
-        jLabel10.setIcon(ColaFichas);
-}
-    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
-        Actualiza();
-        //ImageIcon MatrizOrtogonal  = new ImageIcon(getClass().getResource("/Recursos/Pausa.png"));
-        //ImageIcon MatrizOrtogona = new ImageIcon(MatrizOrtogonal.getImage().getScaledInstance(20,20,java.awt.Image.SCALE_DEFAULT));        
-        //jLabel11.setIcon(MatrizOrtogonal);
-    }//GEN-LAST:event_jTabbedPane2MouseClicked
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -579,6 +605,7 @@ public void  Actualiza(){
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

@@ -16,6 +16,7 @@ public class MatrizOrtogonal {
     ListaLateral ListaLaterales = new ListaLateral();
     int x,y,Posx,Posy=0;
     Tablero Tablero = new Tablero() ;
+    IngresoJugadores IngresoJugadores = new IngresoJugadores();
     JButton MatOrt;
   void Insertar(int x , int y , Object Inserta){
       NodoMatrizOrtogonal Insercion;
@@ -74,7 +75,8 @@ public class MatrizOrtogonal {
           Derecha = Derecha.Derecha;
           Actual = Derecha;
           Tablero.show();
-      }
+          IngresoJugadores.show();     
+     }
               
   }        
 }

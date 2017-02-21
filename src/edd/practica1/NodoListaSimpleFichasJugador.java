@@ -10,6 +10,29 @@ package edd.practica1;
  * @author Jorge Espina
  */
 public class NodoListaSimpleFichasJugador {
-      String Dato;
+    String Dato;
     NodoListaSimpleFichasJugador Siguiente;
+    
+     public void NodoListaSimpleFichasJugador() {
+    
+       this.Dato = "";
+       this.Siguiente = null;
+}
+    public NodoListaSimpleFichasJugador getSiguiente() {
+        return Siguiente;
+    }
+
+   
+    public void setSiguiente(NodoListaSimpleFichasJugador Siguiente) {
+        this.Siguiente = Siguiente;
+    }
+
+   
+    public String getDato() {
+        return Dato;
+    }
+
+    public void setDato(String Dato) {
+        this.Dato = Dato;
+    }
 }

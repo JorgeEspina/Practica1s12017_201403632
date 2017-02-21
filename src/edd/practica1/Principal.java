@@ -118,8 +118,8 @@ public class Principal extends javax.swing.JFrame {
         this.setVisible(false);
         //Tablero Tablero = new Tablero();
         //Tablero.setVisible(true);
-        IngresoJugadores Jugadores= new IngresoJugadores();
-        Jugadores.setVisible(true);
+//        IngresoJugadores Jugadores= new IngresoJugadores();
+//        Jugadores.setVisible(true);
         MatrizOrtogonal MatrizOrtogonal = new MatrizOrtogonal();
         MatrizOrtogonal.Llenar(Dimension, Dimension);
         //MatrizOrtogonal.Graficar();

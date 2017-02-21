@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
 public class IngresoJugadores extends javax.swing.JFrame {
         public static ListaCD ListCD = new ListaCD();
         int IngresoJugadores =0;
-        public static ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();;
+        public static ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();
+        public static ListaSimpleFichasJugador ListaFichasJugador = new ListaSimpleFichasJugador();
         public static String LetraSacada; 
         ColaFichasTotal ColaFichasTotal;
     /**
@@ -45,11 +46,15 @@ public class IngresoJugadores extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setTitle("Ingreso de Jugadores");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Players.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Ingrese Usuario:");
@@ -59,13 +64,6 @@ public class IngresoJugadores extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -86,9 +84,7 @@ public class IngresoJugadores extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jButton2)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -100,15 +96,9 @@ public class IngresoJugadores extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addGap(31, 31, 31))))
+                .addGap(28, 28, 28)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -118,31 +108,34 @@ public class IngresoJugadores extends javax.swing.JFrame {
         Tablero Tablero = new Tablero();
         Tablero.Actualiza();        
         ColaFichasTotal = Principal.ColaFichasTotal; 
-                     
+        ListaSimpleFichasJugador ListaSimpleFichasJugador = new ListaSimpleFichasJugador();            
         String UsuarioJugador = jTextField1.getText();
         if (ListCD.BuscarNodo(UsuarioJugador)==true){
             JOptionPane.showMessageDialog(null,"El Jugador ya existe, Ingrese Nuevamente ");
             jTextField1.setText(null);
         }else{
-             ListaSimpleFichasJugador.VaciarLista();
-             for (int NoFichas = 0 ;NoFichas<8;NoFichas++ ){
+            // ListaSimpleFichasJugador.VaciarLista();
+            System.out.println("Fichas de Sacadas Cola de " + UsuarioJugador);
+             for (int NoFichas = 0 ;NoFichas<7;NoFichas++ ){
              ColaFichasTotal.Sacar();
              ListaSimpleFichasJugador.IngresarNodo(LetraSacada);           
            }   
-            ListCD.IngresarNodo(UsuarioJugador);
+            ListCD.IngresarNodo(UsuarioJugador,ListaSimpleFichasJugador);
             jTextField1.setText(null);                   
            }  
-        ListaSimpleFichasJugador.VerLista();;
+        ListaSimpleFichasJugador.VerLista();
+       
+        ListaFichasJugador = ListCD.getLista(UsuarioJugador);
+        System.out.println("Fichas de " + UsuarioJugador);
+        ListaFichasJugador.VerLista();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-       //System.out.print ("Prueba de sincronizacion de cambios");
-        ListCD.Desplegar();
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        
         
-      //  ListCD.Desplegar();
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,7 +174,6 @@ public class IngresoJugadores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
