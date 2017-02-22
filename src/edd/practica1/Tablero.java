@@ -23,7 +23,7 @@ public class Tablero extends javax.swing.JFrame {
  ColaFichasTotal ColaFichasTotal;
  ListaCD ListaCD;
  ListaSimpleFichasJugador ListaSimpleFichasJugador;
-
+  private int seg=0, min=0, hora=0;
  //ListaSimpleFichasJugador ListaSimpleFichasJugador;
         /**
      * Creates new form Tablero
@@ -33,8 +33,34 @@ public class Tablero extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(255,255,255));
        // ListasDiccionario =Principal.ListasDiccionario;
+        this.hilo = new Thread(){
+            @Override
+            public void run(){
+                try{
+                    while(true){
+                        Thread.sleep(1000);
+                        seg+=1;
+                        if(seg==60){
+                            seg=0;
+                            min+=1;
+                            Actualiza();
+                        }
+                        if(min == 60 ){
+                            min=0;
+                            hora+=1;
+                        }
+//                        seg++;
+                        //cronometro.setText(hora+":"+min+":"+seg);
+                        
+                    }
+                }catch(Exception ie){
+                    System.out.println(ie.getMessage());
+                }
+            }
+            
+        };
     }
-
+  Thread hilo;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -370,12 +396,47 @@ public class Tablero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ListasDiccionario = Principal.ListasSimplesDiccionario;     
+    ListasDiccionario = Principal.ListasSimplesDiccionario;     
       //  NodoListaSimpleDiccionario ListasSimplesDiccionario = Principal.ListasSimplesDiccionario;
     ListasDiccionario.IngresarNodo(jTextField2.getText());
     ListasDiccionario.VerLista();
     jTextField2.setText(null);
-       
+    /* 
+     try {
+         ListasDiccionario.ReporteGraficaDiccionario();
+     } catch (IOException ex) {
+         Logger.getLogger(Tablero.class.getName()).log(Level.SEVERE, null, ex);
+     }
+     try{       
+                        String dotPath  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\graphviz-2.38\\release\\bin\\dot.exe";
+                        String fileInputPath = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimplesDiccionarioReporte.txt";
+                        String fileOutputPath  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimplesDiccionarioReporte.png";	    
+			/*
+			 * Realiza la construccion del comando    
+			 * en la linea de comandos esto es: 
+			 * dot -Tpng -o archivo.png archivo.dot
+			 */
+                      /*  String tParam = "-Tpng";
+                        String tOParam = "-o";
+			String[] cmd = new String[5];
+                        cmd[0] = dotPath;
+                        cmd[1] = tParam;
+                        cmd[2] = fileInputPath;
+                        cmd[3] = tOParam;
+                        cmd[4] = fileOutputPath;
+
+
+                        Runtime rt = Runtime.getRuntime();
+
+                        //Ahora ejecutamos como lo hacemos en consola
+
+                        rt.exec( cmd );
+
+                        } catch (Exception ex) {
+                        ex.printStackTrace();
+                        }  finally {
+                        }*/
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

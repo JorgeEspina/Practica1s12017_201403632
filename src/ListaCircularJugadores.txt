@@ -1,4 +1,4 @@
 digraph ListaCircularJugadores{ 	rankkdir=LR 
  
-->aqqw->we->e->aqqw
+->prueba->final->exacto->prueba
  }

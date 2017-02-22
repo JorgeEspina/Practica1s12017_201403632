@@ -1,4 +1,4 @@
 digraph ColaFichasTotalReporte{ 	rankkdir=LR 
  
-->N->P->D->R->A->O->E->T->N->E->D->N->I->N->H->T->L->U->B->E->N->L->E->O->A->S->A->I->I->E->O->S->E->S->A->S->R->C->A->A->A->O->O->O->E->I->E->O->E->E->U->R->I->C->A->E->O->A->R->R->S->U->U->U->C->C->F->V->Y->Q->J->Z->X
+->D->A->L->E->U->O->P->N->N->G->T->S->R->P->O->I->A->S->I->C->E->C->M->H->S->A->E->O->T->U->T->T->R->E->E->C->E->U->R->H->A->C->D->N->I->I->E->E->R->U->I->A->O->E->A->A->E->A->A->A->O->O->A->O->O->A->F->V->Y->Q->J->Z->X
  }

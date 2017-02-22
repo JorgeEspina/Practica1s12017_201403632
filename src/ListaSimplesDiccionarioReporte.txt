@@ -1,4 +1,4 @@
 digraph ListaSimplesDiccionarioReporte{ 	rankkdir=LR 
  
-->mundo->uno->dos->universidad->practica->ingeniero->juego->mesa->correo->informacion->comerciante
+->mundo->uno->dos->universidad->practica->ingeniero->juego->mesa->correo->informacion->comerciante->uvas->gabreial->comida->manzana->sueter
  }
