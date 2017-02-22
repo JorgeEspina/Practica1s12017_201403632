@@ -85,4 +85,8 @@ public class ColaFichasTotal {
         return "ColaFichasTotalReporte";
     
 }
+     void Buscar(NodoCola cab){
+      
+         
+     }
 }

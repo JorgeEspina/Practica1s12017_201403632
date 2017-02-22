@@ -372,14 +372,38 @@ public class Tablero extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ListasDiccionario = Principal.ListasSimplesDiccionario;     
       //  NodoListaSimpleDiccionario ListasSimplesDiccionario = Principal.ListasSimplesDiccionario;
-   ListasDiccionario.IngresarNodo(jTextField2.getText());
+    ListasDiccionario.IngresarNodo(jTextField2.getText());
     ListasDiccionario.VerLista();
     jTextField2.setText(null);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+        if (jCheckBox1.isSelected()) {
+           
+        } 
+        
+        if (jCheckBox2.isSelected()) {
+         
+        }
+        
+        if (jCheckBox3.isSelected()) {
+           
+        }  
+        if (jCheckBox4.isSelected()) {
+         
+        }
+        
+        if (jCheckBox5.isSelected()) {
+           
+        }    
+        if (jCheckBox6.isSelected()) {
+         
+        }
+        
+        if (jCheckBox7.isSelected()) {
+           
+        }    
       
     }//GEN-LAST:event_jButton2ActionPerformed
 public void  Actualiza(){
@@ -391,11 +415,13 @@ public void  Actualiza(){
         jLabel11.setIcon(null);    
         //jLabel12.setIcon(null);
         ImageIcon ListaDiccionario  = new ImageIcon(getClass().getResource("/ListaSimplesDiccionarioReporte.png"));
-        ImageIcon ListaDiccionari = new ImageIcon(ListaDiccionario.getImage().getScaledInstance(300,600,java.awt.Image.SCALE_DEFAULT));        
+        ImageIcon ListaDiccionari = new ImageIcon(ListaDiccionario.getImage().getScaledInstance(300,600,java.awt.Image.SCALE_DEFAULT)); 
+        
         jLabel7.setIcon(ListaDiccionario);
         ImageIcon ListaFichasActivas  = new ImageIcon(getClass().getResource("/ListaSimpleFichasJugador.png"));
         ImageIcon ListaFichasActiva = new ImageIcon(ListaFichasActivas.getImage().getScaledInstance(100,100,java.awt.Image.SCALE_DEFAULT));        
         jLabel8.setIcon(ListaFichasActivas);
+        
         ImageIcon ListaJugadores  = new ImageIcon(getClass().getResource("/ListaCircularJugadores.png"));
         ImageIcon ListaJugador = new ImageIcon(ListaJugadores.getImage().getScaledInstance(30,30,java.awt.Image.SCALE_DEFAULT));  
         //jLabel12.setIcon(ListaJugador);
@@ -592,7 +618,141 @@ ListaCD = IngresoJugadores.ListCD;
        jCheckBox4.setText(ListaFichasJugador.getLetra3());
        jCheckBox5.setText(ListaFichasJugador.getLetra4());
        jCheckBox6.setText(ListaFichasJugador.getLetra5());
-       jCheckBox7.setText(ListaFichasJugador.getLetra6());      
+       jCheckBox7.setText(ListaFichasJugador.getLetra6());   
+       
+       
+       
+         ListasDiccionario = Principal.ListasSimplesDiccionario;
+        ListaCD = IngresoJugadores.ListCD;
+        ColaFichasTotal =Principal.ColaFichasTotal;   
+        //ListaSimpleFichasJugador = IngresoJugadores.ListaSimpleFichasJugador;    
+     try {
+         //ListaCD.Desplegar();
+        // ListaSimpleFichasJugador.VerLista();
+         ListasDiccionario.ReporteGraficaDiccionario();
+         ListaCD.ReporteGraficaJugadores();
+         ColaFichasTotal.ColaFichasTotalReporte();
+         ListaFichasJugador.ListaSimpleFichasJugadorReporte();
+     } catch (IOException ex) {
+         Logger.getLogger(Tablero.class.getName()).log(Level.SEVERE, null, ex);
+     }
+    try{       
+                        String dotPath  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\graphviz-2.38\\release\\bin\\dot.exe";
+                        String fileInputPath = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimplesDiccionarioReporte.txt";
+                        String fileOutputPath  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimplesDiccionarioReporte.png";	    
+			/*
+			 * Realiza la construccion del comando    
+			 * en la linea de comandos esto es: 
+			 * dot -Tpng -o archivo.png archivo.dot
+			 */
+                        String tParam = "-Tpng";
+                        String tOParam = "-o";
+			String[] cmd = new String[5];
+                        cmd[0] = dotPath;
+                        cmd[1] = tParam;
+                        cmd[2] = fileInputPath;
+                        cmd[3] = tOParam;
+                        cmd[4] = fileOutputPath;
+
+
+                        Runtime rt = Runtime.getRuntime();
+
+                        //Ahora ejecutamos como lo hacemos en consola
+
+                        rt.exec( cmd );
+
+                        } catch (Exception ex) {
+                        ex.printStackTrace();
+                        }  finally {
+                        }
+try{       
+                        String dotPath1  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\graphviz-2.38\\release\\bin\\dot.exe";
+                        String fileInputPath1 = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaCircularJugadores.txt";
+                        String fileOutputPath1  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaCircularJugadores.png";	    
+			/*
+			 * Realiza la construccion del comando    
+			 * en la linea de comandos esto es: 
+			 * dot -Tpng -o archivo.png archivo.dot
+			 */
+                        String tParam1 = "-Tpng";
+                        String tOParam1 = "-o";
+			String[] cmd1 = new String[5];
+                        cmd1[0] = dotPath1;
+                        cmd1[1] = tParam1;
+                        cmd1[2] = fileInputPath1;
+                        cmd1[3] = tOParam1;
+                        cmd1[4] = fileOutputPath1;
+
+
+                        Runtime rt1 = Runtime.getRuntime();
+
+                        //Ahora ejecutamos como lo hacemos en consola
+
+                        rt1.exec( cmd1 );
+
+                        } catch (Exception ex) {
+                        ex.printStackTrace();
+                        }  finally {
+                        }
+		    
+		try{       
+                        String dotPath2  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\graphviz-2.38\\release\\bin\\dot.exe";
+                        String fileInputPath2 = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ColaFichasTotalReporte.txt";
+                        String fileOutputPath2  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ColaFichasTotalReporte.png";	    
+			/*
+			 * Realiza la construccion del comando    
+			 * en la linea de comandos esto es: 
+			 * dot -Tpng -o archivo.png archivo.dot
+			 */
+                        String tParam2 = "-Tpng";
+                        String tOParam2 = "-o";
+			String[] cmd2 = new String[5];
+                        cmd2[0] = dotPath2;
+                        cmd2[1] = tParam2;
+                        cmd2[2] = fileInputPath2;
+                        cmd2[3] = tOParam2;
+                        cmd2[4] = fileOutputPath2;
+
+
+                        Runtime rt2 = Runtime.getRuntime();
+
+                        //Ahora ejecutamos como lo hacemos en consola
+
+                        rt2.exec( cmd2 );
+
+                        } catch (Exception ex) {
+                        ex.printStackTrace();
+                        }  finally {
+                        }
+                try{       
+                        String dotPath3  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\graphviz-2.38\\release\\bin\\dot.exe";
+                        String fileInputPath3 = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimpleFichasJugador.txt";
+                        String fileOutputPath3  = "C:\\Users\\Jorge Espina\\Documents\\NetBeansProjects\\[EDD]Practica1\\src\\ListaSimpleFichasJugador.png";	    
+			/*
+			 * Realiza la construccion del comando    
+			 * en la linea de comandos esto es: 
+			 * dot -Tpng -o archivo.png archivo.dot
+			 */
+                        String tParam3 = "-Tpng";
+                        String tOParam3 = "-o";
+			String[] cmd3 = new String[5];
+                        cmd3[0] = dotPath3;
+                        cmd3[1] = tParam3;
+                        cmd3[2] = fileInputPath3;
+                        cmd3[3] = tOParam3;
+                        cmd3[4] = fileOutputPath3;
+
+
+                        Runtime rt3 = Runtime.getRuntime();
+
+                        //Ahora ejecutamos como lo hacemos en consola
+
+                        rt3.exec( cmd3 );
+
+                        } catch (Exception ex) {
+                        ex.printStackTrace();
+                        }  finally {
+                        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
