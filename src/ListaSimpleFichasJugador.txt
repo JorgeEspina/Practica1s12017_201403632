@@ -1,5 +1,5 @@
 digraph ListaSimpleFichasJugador{ 	rankkdir=LR 
  
 
-R->C->M->B->A->G->S
+E->N->D->R->D->L->E
  }

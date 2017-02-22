@@ -4,6 +4,7 @@ package edd.practica1;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import org.jdom2.Element;
 
 /**
  *
@@ -14,10 +15,12 @@ public class ListaCD {
  Nodo Ultimo;
  int Posicion,DimensionLista =0;
  String Dat;
- ;
+ int Turnos=0;
+ Nodo Turno;
  public ListaCD(){
      Primero=null;
      Ultimo=null;
+     
  }
      //Primero=null;
      //Primero=36;
@@ -73,15 +76,28 @@ public class ListaCD {
  //Primero hacia Ultimo
  public void Desplegar(){
      Nodo Actual = Primero;
-     int a =0;
+          int a =0;
      do{
          System.out.println(Actual.Dato);
          if (a ==0){
               Dat=Actual.Dato;
+                 a++;        
          }
-         a++;        
+         if(a<=a){
+             Dat=Actual.Dato; 
+             a++;       
+         }
+      
          Actual=Actual.Siguiente;
      }while(Actual!=Primero);
+ }
+ public void Turnos(){
+     Turno = Primero;
+       for ( int j = 0; j <= Turnos; j++ ){
+        Dat=Turno.Dato; 
+        Turno=Turno.Siguiente;        
+      }        
+    Turnos++;
  }
   public ListaSimpleFichasJugador getLista(String ValorReferido){
        ListaSimpleFichasJugador FichasJugador = new ListaSimpleFichasJugador();

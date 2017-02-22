@@ -204,6 +204,11 @@ public class Tablero extends javax.swing.JFrame {
         jLabel6.setText("Letras Activas");
 
         jButton3.setText("Validar Tiro");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Cancelar Tiro");
 
@@ -374,8 +379,8 @@ public class Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-       
+      
+      
     }//GEN-LAST:event_jButton2ActionPerformed
 public void  Actualiza(){
        
@@ -408,8 +413,8 @@ public void  Actualiza(){
     }//GEN-LAST:event_jTabbedPane2MouseClicked
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        ListaCD = IngresoJugadores.ListCD;
-      ListaCD.Desplegar();
+      ListaCD = IngresoJugadores.ListCD;
+      ListaCD.Turnos();
       String a ;
       a = ListaCD.getDat();
       jTextField1.setText(a);
@@ -564,6 +569,31 @@ try{
                         }  finally {
                         }
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+ListaCD = IngresoJugadores.ListCD;
+      ListaCD.Turnos();
+      String Turno =ListaCD.getDat();    
+      jTextField1.setText(Turno);
+      ListaFichasJugador = ListCD.getLista(jTextField1.getText());
+      System.out.println("Fichas de " + jTextField1.getText());
+      ListaFichasJugador.VerLista();
+       jButton5.setText(ListaFichasJugador.getLetra());
+       jButton6.setText(ListaFichasJugador.getLetra1());
+       jButton7.setText(ListaFichasJugador.getLetra2());
+       jButton8.setText(ListaFichasJugador.getLetra3());
+       jButton9.setText(ListaFichasJugador.getLetra4());
+       jButton10.setText(ListaFichasJugador.getLetra5());
+       jButton11.setText(ListaFichasJugador.getLetra6());
+       
+       jCheckBox1.setText(ListaFichasJugador.getLetra());
+       jCheckBox2.setText(ListaFichasJugador.getLetra1());
+       jCheckBox3.setText(ListaFichasJugador.getLetra2());
+       jCheckBox4.setText(ListaFichasJugador.getLetra3());
+       jCheckBox5.setText(ListaFichasJugador.getLetra4());
+       jCheckBox6.setText(ListaFichasJugador.getLetra5());
+       jCheckBox7.setText(ListaFichasJugador.getLetra6());      
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,5 +1,5 @@
 digraph ListaCircularJugadores{ 	rankkdir=LR 
  
 
-sd->www->ee->sd
+111->222->333->111
  }
