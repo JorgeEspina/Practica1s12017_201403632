@@ -56,26 +56,7 @@ public class MatrizOrtogonal {
         Escribir.append("\n");
          
         NodoMatrizOrtogonal Arriba = Cabecera.Ultimo.Columna.Ultimo;        
-      /*  Auxiliar3 = Arriba;
-            while (Arriba != null) {
-                Izquierda = ListaLaterales.Ultimo.Filas.Ultimo;
-                while (Izquierda != null) {
-                    pos3 = (OTablero) Auxiliar3.getDato();
-                    if (x == 0) {
-                        Escribir.append("\n" + pos3.getNum());
-                    } else {
-                        Escribir.append("->" + pos3.getNum());
-                    }
-                    Izquierda = Izquierda.Izquierda;
-                    Auxiliar3 = Auxiliar3.getIzquierda();
-                    x++;
-                }
-
-                Arriba = Arriba.Arriba;
-                Auxiliar3 = Arriba;
-                y++;
-            }            */
-
+     
          }catch(Exception e){
         // JOptionPane.showMessageDialog(null, e);
    }
